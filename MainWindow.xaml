@@ -1,0 +1,77 @@
+﻿<Window x:Class="Lab3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="461" Width="777">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="62*" />
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="8*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <MenuItem Header="File">
+                <MenuItem Header="New" Click="NewMenu_Click"/>
+                <MenuItem Header="Load" Click="LoadMenu_Click"/>
+                <MenuItem Header="Save" Click="SaveMenu_Click"/>
+                <MenuItem Header="Exit" Click="ExitMenu_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Click="AboutMenu_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.3*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+                <Label Content="Number of elements:" />
+                <TextBox x:Name="numberOfElementsTextBox" Width="161" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <Label Content="Range from:" />
+                <TextBox x:Name="rangeFromTextBox" Width="150" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                <Label Content="Range to:" />
+                <TextBox x:Name="rangeToTextBox" Width="150" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <TextBox x:Name="outputText" IsReadOnly="True" Margin="10,0,10,0" />
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.Column="0">
+            <ProgressBar x:Name="progressBar" Foreground="LightGray" Margin="10,10,10,10" />
+            <TextBlock x:Name="progressText" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.Column="1" Margin="0,10,10,10">
+            <Button x:Name="startButton" Content="Start" Background="LightGray" Click="StartButton_Click" />
+        </Grid>
+
+        <Grid Grid.Row="4" Grid.ColumnSpan="2">
+            <StatusBar>
+                <TextBlock x:Name="statusBarText" Text="Ready" />
+            </StatusBar>
+        </Grid>
+
+    </Grid>
+</Window>
